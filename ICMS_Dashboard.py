@@ -5,13 +5,12 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QHBoxLay
 from PyQt5.QtCore import Qt,QThread, pyqtSignal
 from PyQt5.QtGui import QPixmap, QMovie, QIcon
 from helper import *
-from detection_models import YoloObjectdetection,BehaviourDetection,SeatObjects
+from detection_models import YoloObjectdetection,BehaviourDetection
 
 CONFIG = Config()
 OBJECT = objectsFiles()
 YOLO_OBJECT = YoloObjectdetection()
 YOLO_GESTURE = BehaviourDetection()
-SEAT_OBJ = SeatObjects()
 
 class BoardThread(QThread):
     frame_ready = pyqtSignal(np.ndarray)
